@@ -51,18 +51,17 @@ body("password")
 }
 
 const validate = (req, res, next) => {
-  const validationResults = validationResult(req)
-    // we’re gonna check if the array of errors is empty or not
-    if(!validationResults.isEmpty()){
-    // if it’s not empty, we’re gonna send the array of errors with their messages as a response
+  const validationResults = validationResult(req);
+  if (validationResults.isEmpty()) {
+    return next();
+  } else {
     return res.status(400).json({
-        errors: validation.errors.map((err) => ` ${err.param} : ${err.msg}`),
-      });
-    }else {
-return next()
-}
-
-}
+      errors: validationResults.errors.map(
+        (err) => ` ${err.param} : ${err.msg}`
+      ),
+    });
+  }
+};
 
 module.exports = {
   userValidationRules,
