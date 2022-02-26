@@ -1,7 +1,7 @@
  We are goning to use express validator to add some validations that prevent the user from sending unwanted data, like weak password, username with one letter, incorrect email form or leaving some of the fields empty.
 
 
-# installation
+## installation and setup
 
 `npm install --save express-validator
 `
