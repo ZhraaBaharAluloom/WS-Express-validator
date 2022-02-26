@@ -52,7 +52,7 @@ body("password")
 
 const validate = (req, res, next) => {
   const validationResults = validationResult(req)
-     we’re gonna check if the array of errors is empty or not
+    // we’re gonna check if the array of errors is empty or not
     if(!validationResults.isEmpty()){
     // if it’s not empty, we’re gonna send the array of errors with their messages as a response
     return res.status(400).json({
