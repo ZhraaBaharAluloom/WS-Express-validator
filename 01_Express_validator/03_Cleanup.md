@@ -1,5 +1,5 @@
-Don’t you think the project became a bit messy? What if we keep adding validation? 
-The code will get bigger and bigger and ewww, so I’m gonna clean a bit
+Don’t you think the project became a bit messy? What if we keep adding validations? 
+The code will get bigger and bigger, so I’m gonna clean it up a bit
 
 - In `api/users`, create a new file named `validation.js`
 
@@ -80,7 +80,7 @@ and call them bewteen the path and the controller function
 router.post("/signup",
 userValidationRules(), validate, signUp)
 ```
-ANNNDDD THHHAT’S NOT IT, there’s more and more, check the [express-validator](https://express-validator.github.io/docs/index.html) docs if you're interested and I’m sure you are 😉.
+That not it! There’s more. Check the [express-validator](https://express-validator.github.io/docs/index.html) docs if you're interested, and I’m sure you are 😉.
 
 
 
