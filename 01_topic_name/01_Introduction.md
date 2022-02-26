@@ -39,7 +39,7 @@ Create a folder named api, then inside it, create another folder called users (s
  
 In controllers.js file create a function for sign up and don’t forget to install bcrypt to hash the password and jsonwebtoken to generate a token.
 
-```
+```js
 const User = require("../../models/User");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -73,7 +73,7 @@ exports.signUp = async (req, res) => {
 
 In routes.js file create a route for sign up, and call signUp function from controller.
 
-```
+```js
 const express = require("express");
 const router = express.Router();
 const { signUp } = require("./controllers");
