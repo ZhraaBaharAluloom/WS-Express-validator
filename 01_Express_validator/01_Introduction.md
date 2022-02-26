@@ -3,11 +3,11 @@ In other words it’s a library that enables you to validate the requests. It al
 Isn’t it amazing? 
 
 
-# How it works
+## How it works
 
 Once the user sends a request, the express-validator will be triggered, validate the request and report any errors before it reaches the DB, (all validation will happen between the request and the response). The request will never get to the DB unless it passes all validation successfully.
 
-# Create user schema with its controller and routes
+## Create user schema with its controller and routes
  
  1. Create an express project, connect it to you mongoDB, and install all required stuff.
  2. Make sure that everything is working fine, no errors, and connected to the db.
