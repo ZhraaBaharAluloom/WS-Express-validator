@@ -72,15 +72,15 @@ module.exports = {
 
 - In `api/users/routes.js` import those functions:
 
-  ```js
-  const { userValidationRules, validate } = require('./validation.js')
-  ```
-  and call them bewteen the path and the controller function
-  ```js
-  router.post("/signup",
-  userValidationRules(), validate, signUp)
-  ```
-  ANNNDDD THHHAT’S NOT IT, there’s more and more, check the [express-validator](https://express-validator.github.io/docs/index.html) docs if you're interested and I’m sure you are 😉.
+```js
+const { userValidationRules, validate } = require('./validation.js')
+```
+and call them bewteen the path and the controller function
+```js
+router.post("/signup",
+userValidationRules(), validate, signUp)
+```
+ANNNDDD THHHAT’S NOT IT, there’s more and more, check the [express-validator](https://express-validator.github.io/docs/index.html) docs if you're interested and I’m sure you are 😉.
 
 
 
