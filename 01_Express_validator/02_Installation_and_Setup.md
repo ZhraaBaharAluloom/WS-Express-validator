@@ -13,17 +13,20 @@
 
 
   - bewteen the “/signup” path and the singUp controller function we will add our validation, to make sure of     the following points:
-    - The fields are exist, not null and not empty:
-  ```js 
-  exists({checkNull: true}).isNot().isEmpty()
-  ```
-   Here it’s gonna check if the field exists then it’s gonna check if it’s null if so it will throw an error      message, and will move on to the next validation which is checking if the value is empty or not.
-    - Email field is filled with a valid input  => isEmail()
-    - Password is more than 8 characters and is strong.
-    - firsName and userName couldn't be named with “name”.
+     - The fields are exist, not null and not empty:
+     ```js 
+     exists({checkNull: true}).isNot().isEmpty()
+     ```
+      Here it’s gonna check if the field exists then it’s gonna check if it’s null if so it will throw an error      message, and will move on to the next               validation which is checking if the value is empty or not.
+     - Email field is filled with a valid input  => isEmail()
+     - Password is more than 8 characters and is strong.
+     - firsName and userName couldn't be named with “name”.
     
    Wanna send a custom message?
-    Just add a property ```js .withMessage(“YOU_MESSAGE”).```
+    Just add a property 
+    ```js
+    .withMessage(“YOU_MESSAGE”).
+    ```
 
     Now let’s apply above validations 🥳
      
