@@ -32,6 +32,7 @@
      
      ```js
      router.post("/signup",
+     // we specify the field that we want to add the validation to in body arguments
      body("firstName")
         .exists({ checkNull: true })
         .not()
