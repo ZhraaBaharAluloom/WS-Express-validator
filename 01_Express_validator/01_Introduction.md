@@ -12,7 +12,7 @@ Once the user sends a request, the express-validator will be triggered and will 
  1. Create an express project, connect it to you mongoDB, and install all required stuff.
  2. Make sure that everything is working without any errors, and the project is connected to the db.
  
- - create a user schema that has the following fields:
+ - Create a user schema that has the following fields:
 
 
     ```js
@@ -37,7 +37,7 @@ Create a folder named api. Then inside it, create another folder called users (w
       1. controllers.js.
       2. routes.js.
  
-In the controllers.js file, create a function for sign up and don’t forget to install `bcrypt` to hash the password and `jsonwebtoken` to generate a token.
+In the `controllers.js` file, create a function for sign up and don’t forget to install `bcrypt` to hash the password and `jsonwebtoken` to generate a token.
 
 ```js
 const User = require("../../models/User");
