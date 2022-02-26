@@ -3,8 +3,8 @@
 
 # installation
 
-npm install --save express-validator
-
+`npm install --save express-validator
+`
 - inside ```api/users/route.js```:
   -  import body API from express-validator library to use its validation:
      ```js 
@@ -14,9 +14,9 @@ npm install --save express-validator
 
   - bewteen the “/signup” path and the singUp controller function we will add our validation, to make sure of     the following points:
     - The fields are exist, not null and not empty:
-   ```js 
-   exists({checkNull: true}).isNot().isEmpty()
-   ```
+  ```js 
+  exists({checkNull: true}).isNot().isEmpty()
+  ```
    Here it’s gonna check if the field exists then it’s gonna check if it’s null if so it will throw an error      message, and will move on to the next validation which is checking if the value is empty or not.
     - Email field is filled with a valid input  => isEmail()
     - Password is more than 8 characters and is strong.
@@ -67,7 +67,7 @@ npm install --save express-validator
     ```
     
     Now let’s get the validation results.
-    in `api/users/controller.js`  => signUp function, before creating the user we’re gonna get the validation     result.
+ - inside `api/users/controller.js`  => signUp function, before creating the user we’re gonna get the validation     result.
     
 
     Import the function `validationResult` from `express-validtor` library:
@@ -119,7 +119,15 @@ So now let's send the errors messages as a response:
 ```js 
 exports.signUp = async (req, res) => {
   try {
-      const hashedPassword = await bcrypt.hash(req.body.password, 10);
+    const validationResults = validationResult(req)
+     //we’re gonna check if the array of errors is empty or not
+    if(!validationResults.isEmpty()){
+    // if it’s not empty, we’re gonna send the array of errors with their messages as a response
+    return res.status(400).json({
+        errors: validation.errors.map((err) => ` ${err.param} : ${err.msg}`),
+      });
+
+    const hashedPassword = await bcrypt.hash(req.body.password, 10);
     req.body.password = hashedPassword;
     const newUser = await User.create(req.body);
     const token = generateToken(newUser);
